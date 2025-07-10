@@ -1,20 +1,20 @@
-apiVersion: app/v1
+apiVersion: apps/v1
 kind: Deployment
-metaData:
-  name: nginx-Deployment
+metadata:
+  name: nginx-deployment
   namespace: default
   labels:
     app: nginx
 spec:
   replicas: 3
   selector:
-    matchLables:
+    matchLabels:
       app: nginx
   template:
-    metaData:
-     labels:
-      app:nginx
+    metadata:
+      labels:
+        app: nginx
     spec:
-      containers:    
+      containers:
         - name: nginx
-          image: inginx:latest
+          image: nginx:latest
